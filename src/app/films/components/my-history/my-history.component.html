@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 id="title">
+        my history
+    </h2>
+    <table class="container">
+        <thead>
+            <tr>
+                <th>booking id</th>
+                <th>film name</th>
+                <th>salary</th>
+                <th>date</th>
+                <th>n of tickets</th>
+                <th>n of seats</th>
+                <th>show id</th>
+            </tr>
+        </thead>
+
+        <tbody id="history" *ngFor="let item of history">
+            <tr >
+                <th>{{item.filmId}}</th>
+                <th>{{item.filmName}}</th>
+                <th>{{item.totalSalary}}</th>
+                <th>{{item.date}}</th>
+                <th>{{item.numberTichet}}</th>
+                <th>{{item.seatNumber}}</th>
+                <th>{{item.id}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

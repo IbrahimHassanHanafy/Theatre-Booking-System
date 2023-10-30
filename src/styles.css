@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.disabled-link {
+    pointer-events: none;
+  }
+#title{
+    text-transform: capitalize;
+    font-size: 2rem;
+    padding: 15px;
+    color: rgb(49, 48, 48);
+
+}
+body{
+    
+    background: rgb(196, 192, 192);
+
+    min-height: 100vh;
+    
+}
+.container{
+    margin-left: 15px;
+    margin-right: 15px;
+    
+}
+/* 
+ */
+ legend{
+    padding: 0px 5px 0px ;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color: rgb(88, 141, 233);
+
+}
+fieldset{
+    border:thin solid #777;
+    padding: 15px 50px;
+    max-width: 800px;
+    min-width: 100%;
+    margin: auto;
+    background-color: #bbb;
+    
+}
+input{
+    display: block;
+    height: 45px;
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 3px 10px;
+    background-color: #ccc;
+}
+input:focus{
+    border: thin solid rgb(88, 141, 233);
+}
+label{
+    margin-left: 5px;
+    color: #666;
+    font-family: cursive;
+}
+#click,.click{
+    display: inline-block;
+    text-transform: capitalize;
+    padding: 8px 15px;
+    color: #f0f0f0;
+    background-color: rgba(88, 141, 233,.7);
+    border: thin solid rgba(88, 141, 233,.5);
+    margin: 10px 20px ;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 110px;
+}
+.borderRed{
+    border: thin solid rgb(241, 41, 34);
+}
+.red{
+    color: rgb(241, 41, 34);
+    display: block;
+}
+
+@media (min-width:720px){
+   .container{
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+}
+@media (min-width:920px){
+    .container{
+        width: 880px;
+        margin-left: auto;
+        margin-right: auto;
+       }
+       fieldset{
+        min-width: 800px;
+       }
+}
+@media (min-width:1200px){
+    .container{
+        width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+       }
+
+
+}
+@media (min-width:1400px){
+    .container{
+        width: 1340px;
+        margin-left: auto;
+        margin-right: auto;
+       }
+}

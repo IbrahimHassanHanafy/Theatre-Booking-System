@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="details">
+        <figure>
+            <img [src]='film.source' alt="">
+        </figure>
+        <article>
+            <h3 class="title">{{film.title}}</h3>
+            <p id="desc">{{film.desc}}</p>
+            <p class="desc-title">geners :Action addrers. crime</p>
+            <form action="">
+                <select name="" id="dropdown"  #ff  (click)="display(ff)" >
+                    <option disabled selected value>-- select day&time --</option>
+                    <option  *ngFor="let dy of  dayAndTime" [value]="dy"  >{{dy}}</option>   
+                </select>
+            </form>
+            <a class="btn" *ngIf="date"  [routerLink]="booking">{{film.time}}</a>
+        </article>  
+    </div>
+</div>
+

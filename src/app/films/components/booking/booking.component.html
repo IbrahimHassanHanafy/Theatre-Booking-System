@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="booking">
+        <div class="left">
+            <header>
+                <h2 id="title">{{data.title}}</h2>
+                <span>{{data.duration}}</span>
+                <h4>choose ticket</h4>
+            </header>
+            <div class="choosing">
+                <div class="choose-ticket">
+                    <div class="choose">
+                        <h3 class="name">normal ticket</h3>
+                        <div class="count">
+                            <span>
+                                <i (click)="subOne(numberTicket,1)">-</i>
+                                <strong #numberTicket>{{nTicket}}</strong>
+                                <i (click)="addOne(numberTicket,1)">+</i>
+                            </span>
+                            <p>100-150 kr</p>
+                        </div>
+                    </div>
+                    <small *ngIf="nTicket==0&&naEqule==0"class="choose red">booking seat completed</small>
+                    <small *ngIf="nTicket==naEqule"class="choose red">max of booking ticket is {{naEqule}} </small>
+                </div>
+                <div class="choose">
+                    <h3 class="name cen">choose snacks</h3>
+                    <h3 class="name cen">quantity</h3>
+                </div>
+                <div class="choose-snacks">
+                    <div class="choose">
+                        <h3 class="name">soft drinks 0.5L</h3>
+                        <div class="count">
+                            <span>
+                                <i (click)="subOne(SoftDrink,2)">-</i>
+                                <strong #SoftDrink>{{nSoftDrink}}</strong>
+                                <i (click)="addOne(SoftDrink,2)">+</i>
+                                
+                                
+                            </span>
+                            <p>25 kr</p>
+                        </div>
+                    </div>
+                    <div class="choose">
+                        <h3 class="name">pop corn</h3>
+                        <div class="count">
+                            <span>
+                                <i (click)="subOne(popCorn,3)">-</i>
+                                <strong  #popCorn >{{nPopCorn}}</strong>
+                                <i (click)="addOne(popCorn,3)">+</i>
+                            </span>
+                            <p>45 kr</p>
+                        </div>
+                    </div>
+                    <div class="choose">
+                        <h3 class="name">snack mern</h3>
+                        <div class="count">
+                            <span >
+                                <i (click)="subOne(snackMern,4)">-</i>
+                                <strong #snackMern>{{nSnackMern}}</strong>
+                                <i (click)="addOne(snackMern,4)">+</i>
+                                
+
+                            </span>
+                            <p>99 kr</p>
+                            
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end of left side in page -->
+        <div class="right">
+            <div class="top">
+                <p>{{data.viewday}} 12:09-12:09</p>
+                <span>Allowed for PG-13</span>
+            </div>
+            <div class="seat-color">
+                <h4>choose hall seats</h4>
+                <div class="colors">
+                    <div class="color" *ngFor="let opt of options;let i =index">
+                        <span class="span" [style.backgroundColor]="colors[i]"></span>
+                        <span>{{opt}}</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="shape">
+            </div>
+            <div class="seats">
+                <div class="seat" *ngFor="let opt of ids;let i=index ;" >
+                    <span class="span" #val [style.backgroundColor]="colors[opt]" (click)="selected(numberTicket,val)">{{i+1}}</span>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h3 class="tickets">tickets</h3>
+        <div class="total-ticket">
+            <span class="nTicket">{{nTicket}} </span>
+            <strong>tickets</strong>
+             <span class="pTicket"> {{pTicket}}</span>kr
+        </div>
+        <div class="total-Snack">
+             <strong>snacks</strong>
+             <span class="pSnack">{{totalSnacks}}</span>kr 
+        </div>
+        <div class="total">
+            <strong>total :</strong>
+            <span class="total-price"> {{total}}</span>kr
+        </div>
+        <div>
+            <button (click)="goToTicketOverview()" id="click">book</button>
+        
+        </div>
+    </footer>
+</div>

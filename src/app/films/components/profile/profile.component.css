@@ -1,0 +1,24 @@
+.link3 a#click{
+    
+}
+.link3{
+    padding: 15px 0;
+    text-align: center;
+}
+form{
+    padding: 50px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+.inputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.input{
+    width: 48%;
+    
+}
+input[type]{
+    height: 50px;
+}

@@ -1,0 +1,22 @@
+
+<div class="container">
+    <h2 id="title">system login</h2>
+    <form  #login="ngForm" novalidate (ngSubmit)="goToHome(login)">
+        <fieldset>
+            <legend>login</legend>
+            
+            <label for="userName">user name</label>
+            <input type="text" id="userName" name="userName" #userName="ngModel" ngModel required>
+            <small class="red" *ngIf="(admin.name!=userName.value&&register.name!=userName.value) && userName.touched" >invalid userName</small>
+
+            <label for="password">password</label>
+            <input type="password" #password="ngModel" name="password" ngModel required>
+            <small class="red" *ngIf="(admin.password!=password.value&&register.password!=password.value)&&password.touched" >invalid password</small>
+            
+            <button type="submit" class="click" [disabled]="login.invalid" >login</button>
+            <button [routerLink]="'/register'" class="click">register</button>
+           
+        </fieldset>
+    </form>
+</div> 
+

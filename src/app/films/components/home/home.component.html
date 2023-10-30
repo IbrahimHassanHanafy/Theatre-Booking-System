@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="films">
+        <div class="film" *ngFor="let film of films" [id]="film.id" [routerLink]="'/film-details/'+film.id">
+            <figure>
+                <img [src]='film.source' alt="img" width="100%" height="350px">
+                <!-- <img src='{{film.source}}' alt="img" width="100%" height="350px"> -->
+                <figcaption>{{film.title}} </figcaption>
+            </figure>
+            <h3 class="head">
+                <span>duration</span>
+                <span>relese date</span> 
+            </h3>
+            <h3 class="head2">
+                <span>{{film.time}}</span>
+                <span>{{film.date}}</span>
+            </h3>
+            <a [routerLink]="'/film-details/'+film.id"  class="card">view show time</a>
+
+        </div>
+    </div>
+</div>

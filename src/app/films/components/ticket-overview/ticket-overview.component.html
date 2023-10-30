@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="overview">
+        <h2 id="title">movie ticket overview</h2>
+        <aside>
+            <figure>
+                <img [src]="film.source" alt="">
+            </figure>
+            <div class="detail">
+                <h3 class="name">{{film.title}}</h3>
+                <p class="genre">{{film.Genre}}</p>
+                <h4 class="date">state T.h {{film.date}}</h4>
+            </div>
+        </aside>
+        <div class="confirm">
+            <h3>confirm</h3>
+            <p class="desc">you are abort to pay for tickets to {{film.title}}</p>
+        </div>
+        <div class="pay">
+            <h4 class="total">Total {{total}} kr</h4>
+            <a [routerLink]="'/parcode'" id="click">pay</a>
+        </div>
+    </div>
+</div>

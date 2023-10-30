@@ -1,0 +1,60 @@
+<div class="container">
+    <h2 id="title">register an account</h2>
+    <form  #form1="ngForm" novalidate (ngSubmit)="submitToHome(form1)">
+        <fieldset>
+            <legend >register</legend>
+            <label for="userName">user name</label>
+            <input type="text" id="userName" name="userName"   #userName="ngModel" required ngModel
+             [class.borderRed]="userName.touched&&userName.invalid">
+            <small class="red" *ngIf="userName.errors?.['required'] &&userName.touched">userName is required</small>
+
+            <label for="password">password</label>
+            <input type="password" name="password" ngModel id="password" minlength="8" #password="ngModel" required 
+            [class.borderRed]="password.touched&&password.invalid">
+            <div *ngIf="password.errors&&(password.touched||password.invalid)">
+                <small class="red" *ngIf="password.errors?.['minlength'] &&password.touched">minlength must greater than 8 digit .</small>
+                <small class="red" *ngIf="password.errors?.['required'] &&password.touched">password is required</small>
+            </div>
+           
+            <div ngModelGroup="fullName">
+                <label for="firstName">first name</label>
+                <input type="text" id="firstName" name="firstName" ngModel #firstName="ngModel" required
+                 [class.borderRed]="firstName.touched&&firstName.invalid">
+                <small class="red" *ngIf="firstName.errors?.['required'] &&firstName.touched">firstName is required</small>
+
+                <label for="lastName">last name</label>
+                <input type="text" id="lastName" name="lastName" ngModel #lastName="ngModel" required 
+                [class.borderRed]="lastName.touched&&lastName.invalid">
+                <small class="red" *ngIf="lastName.errors?.['required'] &&lastName.touched">lastName is required</small>
+            </div>
+            
+
+            <label for="email">email</label>
+            <input type="email" name="email" ngModel id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9]+.com" #email="ngModel" required 
+            [class.borderRed]="email.touched&&email.invalid">
+            <div *ngIf="email.errors&&(email.touched||email.invalid)">
+                <small class="red" *ngIf="email.errors['pattern'] &&email.touched">pattern must{{email.errors['pattern'].requiredPattern|json}} .</small>
+                <small class="red" *ngIf="email.errors?.['required'] &&email.touched">email is required</small>
+            </div>
+
+
+            <label for="phone">phone</label>
+            <input type="tel" id="tel" name="phone" pattern="[0][1][0-9]{9}" ngModel #phone="ngModel" required 
+            [class.borderRed]="phone.touched&&phone.invalid">
+            <div *ngIf="phone.errors&&(phone.touched||phone.invalid)">
+                <small class="red" *ngIf="phone.errors['pattern'] &&phone.touched">pattern must{{phone.errors['pattern'].requiredPattern|json}} .</small>
+                <small class="red" *ngIf="phone.errors?.['required'] &&phone.touched">phone is required</small>
+            </div>
+
+            <!-- go to page -->
+            <button type="submit" class="click" [disabled]="form1.invalid">register</button>
+            <!-- go to home -->
+            <button class="click" [routerLink]="'/login'">cancel</button>
+        </fieldset>
+    
+    </form>
+
+
+
+
+</div>

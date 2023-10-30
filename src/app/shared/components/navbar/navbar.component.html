@@ -1,0 +1,13 @@
+<nav>
+    <div class="container">
+        <ul id="links">
+            
+            <li><a [routerLink]="disableHome()">home</a></li>
+            <li><a [routerLink]="disableProfile()">profile</a></li>
+            <li><a routerLink="login" *ngIf="!login" >login</a></li>
+            <li><a routerLink="" *ngIf="login" (click)="logout()">logOut</a></li>
+            <li><a routerLink="register">register</a></li>
+        </ul>
+        
+    </div>
+</nav>

@@ -1,0 +1,72 @@
+.overview{
+    margin: 50px auto;
+    width: 400px;
+
+}
+#title{
+    background-color:rgb(63, 114, 207);
+}
+aside{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 ;
+
+}
+figure{
+    display: block;
+    width: 35%;
+}
+.detail{
+width: 60%;
+display: flex;
+flex-direction: column;
+
+text-transform: capitalize;
+margin: 20px 0 ;
+}
+.name{
+    font-size: 1.6rem;
+    color: #222;
+}
+.genre,.date{
+    color: #444;
+    
+}
+.detail .genre{
+    margin: 15px 0;
+}
+figure img{
+    width: 100%;
+    height: 200px;
+    display: block;
+    margin: 10px;
+}
+.confirm{
+    background-color: rgb(40, 73, 133);
+    padding: 5px;
+}
+.confirm h3{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+.desc{
+    margin: 0 20px;
+    font-size: 1.2rem;
+}
+.pay{
+    padding: 5px 0 0;
+    text-align: center;
+    background-color: #222;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.pay a#click{
+    width: 85%;
+    border-radius: 0;
+    border: none;
+    padding:5px 0;
+    text-transform: uppercase;
+    background-color: rgb(214, 65, 170);
+}
